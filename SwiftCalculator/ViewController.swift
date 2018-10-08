@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lblResult: UILabel!
-    @IBOutlet weak var lblTemp: UILabel!
     
     var numberOnScreen: Double = 0;
     var previousNumber: Double? = nil;
@@ -41,6 +40,11 @@ class ViewController: UIViewController {
     
     // Number click event
     @IBAction func NumberClicked(_ sender: UIButton) {
+        
+        if isNewValue == true && result != 0 {
+            runningTotal = 0;
+            previousNumber = nil;
+        }
         
         // The user is entering a new value, overwriting the previous number
         if isNewValue == true {
@@ -175,7 +179,7 @@ class ViewController: UIViewController {
             }
             
             repeatLastOperation = true;
-            
+            isNewValue = true;
         } else {
             
             Reset();
