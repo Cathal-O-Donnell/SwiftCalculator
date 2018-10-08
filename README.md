@@ -1,0 +1,1 @@
+A simple calculator app created as an exercise in learning Swift for ios development
